@@ -61,7 +61,7 @@ async function weather(lat,lon){
 console.log('hi');
 
 const app = express();
-
+const port =process.env.PORT || 3000;
 const appDirctory=path.join(__dirname,'../public');
 const viwespath=path.join(__dirname,'../views');
 app.set('view engine','hbs');
@@ -119,6 +119,6 @@ app.get('*',(req,res)=>{
 res.send('My 404 page');
 })
 
-app.listen(3000,()=>{
-    console.log('server is up');
+app.listen(port,()=>{
+    console.log('server is up  '+port);
 })
